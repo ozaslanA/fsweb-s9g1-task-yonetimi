@@ -63,9 +63,9 @@ const TaskForm = ({ kisiler, submitFn }) => {
           id="description"
           {...register("description", {
             required: "Açıklama Giriniz",
-            maxLength: {
-              value: 10,
-              message: "Task Başlığı En fazla 10 Karakter Olmalı",
+            minLength: {
+              value: 1,
+              message: "Açıklama En Az 10 Karakter Olmalı",
             },
           })}
         ></textarea>
