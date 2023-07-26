@@ -7,8 +7,8 @@ const TaskForm = ({ kisiler, submitFn }) => {
     register,
     handleSubmit,
     reset,
-    formState: { errors },
-  } = useForm();
+    formState: { errors, isValid },
+  } = useForm({ mode: "onChange" });
 
   // task ekleme
   function myCustomhandleSubmit(data) {
@@ -98,11 +98,7 @@ const TaskForm = ({ kisiler, submitFn }) => {
       </div>
 
       <div className="form-line">
-        <button
-          className="submit-button"
-          type="submit"
-          //  disabled={buttonDisabled}
-        >
+        <button className="submit-button" type="submit" disabled={!isValid}>
           Kaydet
         </button>
       </div>
